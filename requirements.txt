@@ -1,0 +1,8 @@
+websocket-client
+certifi
+pygame
+
+# optional: enables the system-tray icon (minimize to tray). The script
+# still runs without these - it just skips the tray icon feature.
+pystray
+Pillow
