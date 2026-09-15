@@ -11,6 +11,7 @@ import threading    # runs ws/beep/tray icon in separate threads, keeps the UI r
 
                         # gui imports
 import tkinter as tk    # builds the desktop window/interface
+from tkinter import font as tkfont   # needed to build a strikethrough font
 
                     # audio imports
 import pygame       # loads and plays the notification sound
@@ -317,9 +318,11 @@ class SimpleScript(tk.Tk):          # the script is a tkinter window (inherits f
                     activebackground=BG, activeforeground=C_BRIGHT,
                     relief="flat", bd=0, cursor="hand2",
                     command=self._open_saved_view).pack(side="right")   # opens saved view
-            else:                                                       # greyed out, no files yet
-                tk.Label(bottom_row, text="recorded", font=FONT_SML,
-                    bg=BG, fg="#333333", overstrike=True).pack(side="right")
+            else:
+                # overstrike is a font attribute, not a widget option - keep a reference so Tk doesn't garbage-collect it
+                self._recorded_strike_font = tkfont.Font(family=FONT_SML[0], size=FONT_SML[1], overstrike=True)
+                tk.Label(bottom_row, text="recorded", font=self._recorded_strike_font,
+                    bg=BG, fg="#333333").pack(side="right")   # greyed out, no files yet
 
         return bar
 
