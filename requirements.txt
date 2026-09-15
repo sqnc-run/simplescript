@@ -1,5 +1,0 @@
-websocket-client
-certifi
-pygame
-pystray
-pillow
