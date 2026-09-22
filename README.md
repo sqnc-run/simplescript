@@ -1,5 +1,5 @@
 # SimpleScript
-[→ demo: vimeo.com/1228978442](https://vimeo.com/1228978442)
+→ demo: [vimeo.com/1228978442](https://vimeo.com/1228978442)
 
 A desktop app (Python + tkinter) that connects to [sqnc.run](https://sqnc.run) over WebSocket, watches a live stream of 7x7 binary frames, and alerts you when a frame sequence you define ("trigger") shows up.
 
